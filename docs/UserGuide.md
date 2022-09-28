@@ -73,25 +73,34 @@ Shows a message explaning how to access the help page.
 Format: `help`
 
 
-### Adding a person: `add`
+### Creating a new student record : `new student`
 
-Adds a person to the address book.
+Creates a new student record with the name of the student and other relevant details such as:
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
+* Student ID
+* Name of Parent
+* Home Address
+* Mobile Number of Parent
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A person can have any number of tags (including 0)
+Format: `new student n/[name of student] id/[id of student] pn/[name of parent] a/[home address] hp/[mobile number of parent]`
+
+<div markdown="span" class="alert alert-primary">:bulb: **Note:**
+All fields are compulsory and cannot be left empty.
 </div>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `new student n/Jonathan Tan id/123A pn/George Tan a/10 Kent Ridge View hp/91234567`
+* `new student n/Sally Teo id/789B pn/Amy Toh a/200 River Valley Street hp/97654321`
 
-### Listing all persons : `list`
+### Listing all persons : `view all`
 
-Shows a list of all persons in the address book.
+Shows a list of all students in the class.
+For each student in the list, only the Student's Name and Student's ID are displayed.
 
-Format: `list`
+:bulb: Note: The other details of a student are hidden to reduce cluttering.
+To view the full record of a student, use the `view` command instead.   
+
+Format: `view all`
 
 ### Editing a person : `edit`
 
@@ -128,19 +137,15 @@ Examples:
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
-### Deleting a person : `delete`
+### Deleting individual student record : `delete`
 
-Deletes the specified person from the address book.
+Deletes an existing student record from the class list, using the student’s name or the student’s ID.
 
-Format: `delete INDEX`
-
-* Deletes the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed person list.
-* The index **must be a positive integer** 1, 2, 3, …​
+Format: `delete n/[name of student]` or `delete id/[id of student]`
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd person in the address book.
-* `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
+* `delete Jonathan Tan` deletes student record with student's name as 'Jonathan Tan'.
+* `delete 123A` deletes student record with students' ID as '123A'.
 
 ### Clearing all entries : `clear`
 
@@ -156,7 +161,7 @@ Format: `exit`
 
 ### Saving the data
 
-AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+Student records are saved locally after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 

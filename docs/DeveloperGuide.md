@@ -270,14 +270,42 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Role (As a/ an)                                       | Goal/ Function (I want to)                                               | Benefit (So that I)                                                            | Priority |
+|-------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------|----------|
+| new user                                              | purge all current data                                                   | can get rid of sample/ experimental data I used for exploring the application. | ***      |
+| new user                                              | create some student records                                              |                                                                                | ***      |
+| new user                                              | create multiple student records with a single command                    | can save time by not having to enter each student’s information individually.  | ***      |
+| new user                                              | view a list of all student records                                       |                                                                                | ***      |
+| new user                                              | search for a student by his/her student ID                               |                                                                                | ***      |
+| new user                                              | search for a student by his/her name                                     |                                                                                | ***      |
+| new user                                              | search for a student by his/her index number within a class              |                                                                                | ***      |
+| new user                                              | search for a class by the class name                                     |                                                                                | ***      |
+| new user                                              | view a condensed list of student records                                 | can view the information of students in a consised and compact manner.         | ***      |
+| new user                                              | delete a student record                                                  |                                                                                | ***      |
+| new user who is careless                              | automatically save the data without having to type in a separate command | do not need to worry about forgetting to save before I quit the application.   | ***      |
+| new user who is non-technical                         | follow a set of instructions/ guide                                      | can get a sense of how to use the application.                                 | ***      |
+| intermediate user                                     | update the details of any student record                                 | can keep my records accurate and up to date.                                   | ***      |
+| teacher with multiple classes                         | separate my different classes individually                               | can keep my records tidy and organised.                                        | ***      |
+| potential user                                        | see a summary of functionalities                                         | have an idea of what I can do with the app without accessing the user guide.   | **       |
+| potential user                                        | try the application with prepopulated sample data                        | can easily see how the application will look like when it is in use.           | **       |
+| new user                                              | do a general search                                                      | do not have to remembe the difference keywords.                                | **       |
+| intermediate user                                     | filter a list of students by grade                                       | can find students who meet a specific grade easily.                            | **       |
+| intermediate user                                     | delete all student records from a class                                  | can reuse the class for another batch.                                         | **       |
+| intermediate user                                     | view statistics for the class result                                     | can have an overview of how all my students are doing.                         | **       |
+| intermediate user                                     | view a summary of my students' performance                               | can take note of my students' academic performance.                            | **       |
+| intermediate user                                     | create additional custom fields in a student record                      | can keep track of additional information about a particular students.          | **       |
+| intermediate user                                     | sort the list of students by their grades                                | can quickly identify students who will need more help.                         | **       |
+| intermediate user                                     | copy a student's information from one class to another                   | do not need to enter the same information twice.                               | **       |
+| new user                                              | save drafts for any changes                                              | can continue from where I left off previously.                                 | *        |
+| intermediate user who is careless                     | undo my previous change                                                  | can undo any accidental changes easily.                                        | *        |
+| intermediate user who is ready to explore more        | find out more advanced commands through suggestions                      | can extend the functionality of the application and perform more tasks.        | *        |
+| expert user                                           | share student records with other teachers                                | other teachers can take over the class and view past records of the students   | *        |
+| expert user                                           | transfer/ backup data from one computer to another                       |                                                                                | *        |
+| expert user                                           | put passcode on student's data that is private                           | the data is not easily visible to other users.                                 | *        |
+| expert user                                           | show and hide certain fields with sensitive information                  |                                                                                | *        |
+| expert user                                           | archive the data                                                         | can reference to it in the future and not be cluttered by it.                  | *        |
+| teacher who made a marking mistake                    | update all my students' test score with a single command (e.g. all +2)   | do not have to individually update each record.                                | *        |
+| teacher who will be taking the same class (next year) | duplicate the class list                                                 | can save time on creating a new list.                                          | *        |
 
 *{More to be added}*
 
@@ -311,17 +339,28 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 *{More to be added}*
 
 ### Non-Functional Requirements
-
-1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+- **Technical Requirement**:
+  - Application should work on any device - teachers using different laptops should be able to use the application.
+- **Quality Requirement**:
+  - Display of information on the application should not feel cluttered.
+- **Performance Requirement**:
+  - Should be able to process any command within two seconds - response of application should not feel laggy.
+- **Project Scope**:
+  - Application does not offer student or parent accounts, and hence no communication with students or their guardians via the product.
+  - Application does not allow synchronisation of class lists with other teachers, but allows for sharing of data between teachers.
 
 *{More to be added}*
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **CLI**: Command Line Interface (CLI) is a text-based User Interface (UI) used to run programs.
+Through the CLI, users interact with the application by typing in text commands
+* **Use case**: A description of a set of sequences of actions, including variants, 
+that a system performs to yield an observable result of value to an actor
+* **MSS**: Main Success Scenario (MSS) describes the most straightforward interaction for a given use case, 
+which assumes that nothing goes wrong
+* **Non-Functional Requirements**: The constraints under which the system is developed and operated
 
 --------------------------------------------------------------------------------------------------------------------
 
